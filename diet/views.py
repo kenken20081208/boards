@@ -11,6 +11,8 @@ def index(request):
         total = total + meal.kcal
     if total > 2500:
         warning_message = "警告: これ以上食べたら太るぞ❤️"
+    elif total > 4000:
+        warning_message = "これ以上はまずいですよ"
     else:
         warning_message = None
     context = {"all_meal": all_meal, "total": total, "warning_message": warning_message}
