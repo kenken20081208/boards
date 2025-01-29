@@ -7,7 +7,7 @@ Board | Home
 
 <div class='container'>
     <div class='content'>
-        <h1>痩せろよ ^^b</h1>
+        <h1>痩せてみろよ</h1>
         <form action="{% url 'diet:create' %}" method="post">
             {% csrf_token %}
             <input type="text" name="name">
@@ -17,9 +17,13 @@ Board | Home
 </div>
 
 {% for meal in all_meal %}
-    <p>{{ meal.name }} {{ meal.kcal }}</p>
+    <p>{{ meal.created_at }}     食べたものは{{ meal.name }}    カロリーは{{ meal.kcal }}kcal</p>
 {% endfor %} 
 <h1>合計カロリー{{total}}kcal<h1>
+{% if warning_message %}
+    <p style="color: red;">{{ warning_message }}</p>
+{% endif %}
+
 
 {% endblock %}
 

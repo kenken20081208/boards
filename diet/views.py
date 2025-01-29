@@ -9,8 +9,11 @@ def index(request):
     total = 0
     for meal in all_meal:
         total = total + meal.kcal
-
-    context = {"all_meal": all_meal, "total": total}
+    if total > 2500:
+        warning_message = "警告: これ以上食べたら太るぞ❤️"
+    else:
+        warning_message = None
+    context = {"all_meal": all_meal, "total": total, "warning_message": warning_message}
     return render(request, "diet/input.html", context)
 
 
