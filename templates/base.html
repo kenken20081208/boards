@@ -30,6 +30,13 @@
             <ul class="nav me-auto">
                 <li class="nav-item"><a href="{% url 'index' %}" class="nav-link link-body-emphasis px-2 active"
                         aria-current="page">Home</a></li>
+
+
+                <li class="nav-item"><a href="{% url 'borad:index' %}" class="nav-link link-body-emphasis px-2 active"
+                    aria-current="page">掲示板</a></li>
+
+                {% comment %} <li class="nav-item"><a href="{% url 'diet:input' %}" class="nav-link link-body-emphasis px-2 active"
+                    aria-current="page">ダイエット</a></li> {% endcomment %}
             </ul>
             {% if user.is_authenticated %}
             <div class="nav d-block flex-shrink-0 dropdown">

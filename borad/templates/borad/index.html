@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}
+Board | Schedule
+{% endblock %}
+{% block content %}
+
+ <p>掲示板<p>
+<form action="{% url 'borad:pepe' %}" method="post">
+    {% csrf_token %}
+    <input type="text" name="moji">
+    <input class="s" type="submit" value="掲載">
+</form>
+
+{% for borad in all_moji %}
+<p>{{ borad.moji }}</p>
+{% endfor %}
+{% endblock %}

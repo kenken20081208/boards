@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}
+Board | Home
+{% endblock %}
+{% block content %}
+
+
+<div class='container'>
+    <div class='content'>
+        <h1>home</h1>
+        <form action="{% url 'diet:create' %}" method="post">
+            {% csrf_token %}
+            <input type="text" name="name">
+            <input type="text" name="kcal">
+            <input type="submit" value="登録">
+    </div>
+</div>
+
+{% for meal in all_meal %}
+    <p>{{ meal.name }} {{ meal.kcal }}</p>
+{% endfor %} 
+
+
+
+{% endblock %}
+

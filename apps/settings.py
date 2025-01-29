@@ -32,6 +32,8 @@ ALLOWED_HOSTS = ["127.0.0.1", ".vercel.app", "localhost"]
 # Application definition
 
 INSTALLED_APPS = [
+    "diet.apps.DietConfig",
+    "borad.apps.BoradConfig",
     "login.apps.LoginConfig",
     "django.contrib.admin",
     "django.contrib.auth",
