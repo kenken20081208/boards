@@ -1,0 +1,42 @@
+.caveat{
+    font-size: 80px;
+}
+.pipi{
+    display: flex;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+.delete{
+    margin-left: 30px;
+    width: 90px;
+    height: 50px;
+    background-color: blue;
+    color: white;
+    border: white;
+    border-radius: 10px;
+}
+p{
+    margin-top: 2px;
+}
+.container{
+    padding: 0;
+}
+.title{
+    border-bottom:3px solid black;
+    text-align: center;
+}
+.all {
+    max-width: 800px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.maaa{
+    text-align: center;
+}
+.meal{
+    margin-left: 30                                                                                                                                                                                         px;
+}

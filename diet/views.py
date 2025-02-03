@@ -12,7 +12,7 @@ def index(request):
     if total > 4000:
         warning_message = "これ以上はまずいですよ"
     elif total > 2500:
-        warning_message = "警告: これ以上食べたら太るぞ❤️"
+        warning_message = "警告: これ以上は太るよ"
     else:
         warning_message = None
     context = {"all_meal": all_meal, "total": total, "warning_message": warning_message}
@@ -30,3 +30,9 @@ def create(request):
 def sum(request):
     context = {}
     return render(request, "diet/input.html", context)
+
+
+def delete(repuest, meal_id):
+    meal = Meal.objects.get(id=meal_id)
+    meal.delete()
+    return HttpResponseRedirect(reverse("diet:index"))
