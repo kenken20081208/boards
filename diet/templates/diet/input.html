@@ -4,34 +4,32 @@ Board | Home
 {% endblock %}
 {% block content %}
 {% load static %}
-<link rel="stylesheet" href="{% static 'diet/style.css' %}">
+<link rel="stylesheet" href="{% static 'diet/style.css' %}"> 
 <div class="all">
-    <div class='container'>
-        <div>
-            <h1 class="title">痩せてみろよ</h1>
-            <form class="maaa"action="{% url 'diet:create' %}" method="post">
-                {% csrf_token %}
-                <input class="meal" type="text" name="name" placeholder="食べたもの">
-                <input class="kcal" type="text" name="kcal" placeholder="カロリー">
-                <input type="submit" value="登録">
-            </form>
-        </div>
-    </div>
+    <h1 class="title">痩せよう</h1>
+    <form class="maaa"action="{% url 'diet:create' %}" method="post">
+        {% csrf_token %}
+        <input class="meal" type="text" name="name" placeholder="食べたもの" required>
+        <input class="kcal" type="text" name="kcal" placeholder="カロリー" required>
+        <input class="touroku" type="submit" value="登録">
+    </form>
+</div>
 
+   
+<div class="all2">
     {% for meal in all_meal %}
         <div class="pipi">
-            <p class="record">{{ meal.created_at }}     食べたものは{{ meal.name }}    カロリーは{{ meal.kcal }}kcal  {{event.id}}</p>
+            <p class="record">{{ meal.created_at }}     <br>食べたものは<span class="tabeta">{{ meal.name }}</span></br>    カロリーは<span class="karori">{{ meal.kcal }}kcal</span>  {{event.id}}</p>
             <form action="{% url 'diet:delete' meal.id %}" method="post">
                 {% csrf_token %}
                 <input class="delete" type="submit" value="削除">
             </form>
         </div>
     {% endfor %} 
-    <h1>合計カロリー{{total}}kcal<h1>
+    <h1 class="allkcal">合計カロリー{{total}}kcal<h1>
     {% if warning_message %}
-        <p class="caveat">{{ warning_message }}</p>
+    <p class="caveat">{{ warning_message }}</p>
     {% endif %}
-
-
-    {% endblock %}
 </div>
+
+{% endblock %}
