@@ -6,7 +6,7 @@ Board | Home
 {% load static %}
 <link rel="stylesheet" href="{% static 'diet/style.css' %}"> 
 <div class="all">
-    <h1 class="title">痩せよう</h1>
+    <h1 class="title">ダイエット</h1>
     <form class="maaa"action="{% url 'diet:create' %}" method="post">
         {% csrf_token %}
         <input class="meal" type="text" name="name" placeholder="食べたもの" required>
